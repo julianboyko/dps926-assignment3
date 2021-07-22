@@ -1,0 +1,26 @@
+#previous-orders-header {
+  margin-top: 5px;
+  text-align: center;
+}
+
+#previous-orders-list {
+  margin-top: 10px;
+  display: flex;
+  justify-content: right;
+}
+
+#quantity {
+  margin-left: 5%;
+}
+
+#date-container {
+  display: flex;
+}
+
+.label-header {
+  font-size: 30px;
+}
+
+.date-string {
+  color: green;
+}

@@ -1,0 +1,25 @@
+#total-header {
+    text-align: center;
+}
+
+#current-order-list {
+    margin-top: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+#price-and-quantity {
+    margin-left: 35%;
+}
+
+#place-order-div {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.label-header {
+    font-size: 20px;
+}

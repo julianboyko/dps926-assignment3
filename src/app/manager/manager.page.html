@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Manager</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="manager-page">
+    <ion-button [routerLink]="['/current-order']">CHECK CURRENT ORDER</ion-button>
+    <ion-button [routerLink]="['/home']">UPDATE CURRENT ORDER</ion-button>
+    <ion-button [routerLink]="['/previous-orders']">PREVIOUS ORDERS</ion-button>
+    <ion-button [routerLink]="['/home']" (click)="newOrder()">NEW ORDER</ion-button>
+  </div>
+</ion-content>

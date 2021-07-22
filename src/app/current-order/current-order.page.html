@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Current Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="total-header">
+    <ion-label class="label-header">Total Price: ${{totalPrice}}</ion-label>
+    <br />
+    <ion-label class="label-header"
+      >Total Quantity: {{totalQuantity}}</ion-label
+    >
+  </div>
+
+  <div>
+    <ion-list>
+      <ion-item-sliding *ngFor="let pizza of pizzas; index as i;">
+        <ion-item>
+          <div id="current-order-list">
+            <div>
+              <ion-label>Topping: {{pizza.getTopping()}}</ion-label>
+              <br />
+              <ion-label>Size: {{pizza.getSize()}}</ion-label>
+            </div>
+            <div id="price-and-quantity">
+              <ion-label>Price: ${{pizza.getPrice()}}</ion-label>
+              <br />
+              <ion-label>Quantity: {{pizza.getQuantity()}}</ion-label>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option (click)="removePizza(i)" color="danger">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  <div id="place-order-div">
+    <ion-button (click)="placeOrder()">Place Order</ion-button>
+  </div>
+</ion-content>

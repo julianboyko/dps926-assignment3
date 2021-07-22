@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Previous Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="previous-orders-header">
+    <ion-label class="label-header">All Previous Orders:</ion-label>
+  </div>
+  <div>
+    <ion-list>
+      <ion-item *ngFor="let order of previousOrders">
+        <div id="previous-orders-list">
+          <div>
+            <div id="date-container">
+              <ion-label>Date: </ion-label>&nbsp;
+              <ion-label class="date-string"
+                >{{order.getDateAsString()}}</ion-label
+              >
+            </div>
+            <br />
+            <ion-label>Price: ${{order.totalPrice}}</ion-label>
+          </div>
+          <div id="quantity">
+            <br />
+            <ion-label>Quantity: {{order.totalQuantity}}</ion-label>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

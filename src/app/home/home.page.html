@@ -1,20 +1,121 @@
-<ion-header [translucent]="true">
+<ion-header collapse="condense">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title class="ion-text-center" size="large"> Pizza App </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div id="header">
+    <ion-img
+      style="width: 120px; height: 120px"
+      src="assets/pizza-store.jpeg"
+    ></ion-img>
+    <ion-button id="manager-button" [routerLink]="['/manager']">MANAGER</ion-button>
+  </div>
+  <div id="quantity-label">
+    <p>Quantity: {{selectedQuantity}}</p>
+  </div>
+  <div>
+    <ion-grid id="quantity-grid">
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="quantityClicked(1)" class="quantity-button"
+            >1</ion-button
+          >
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="quantityClicked(2)" class="quantity-button"
+            >2</ion-button
+          >
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="quantityClicked(3)" class="quantity-button"
+            >3</ion-button
+          >
+        </ion-col>
+      </ion-row>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="quantityClicked(4)" class="quantity-button"
+            >4</ion-button
+          >
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="quantityClicked(5)" class="quantity-button"
+            >5</ion-button
+          >
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="quantityClicked(6)" class="quantity-button"
+            >6</ion-button
+          >
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="quantityClicked(7)" class="quantity-button"
+            >7</ion-button
+          >
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="quantityClicked(8)" class="quantity-button"
+            >8</ion-button
+          >
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="quantityClicked(9) " class="quantity-button"
+            >9</ion-button
+          >
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="resetUI()" class="quantity-button reset-button">RESET</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="quantityClicked(0)" class="quantity-button"
+            >0</ion-button
+          >
+        </ion-col>
+        <ion-col>
+          <ion-button
+            (click)="addButtonClicked()"
+            class="quantity-button add-button"
+            >ADD</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div id="toppings-and-sizes">
+    <div id="toppings">
+      <p>Topping: {{selectedTopping}}</p>
+      <ion-list>
+        <ion-item
+          button
+          *ngFor="let topping of toppings"
+          button
+          (click)="toppingClicked(topping.name)"
+        >
+          <ion-label>{{topping.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div id="sizes">
+      <p>Size: {{selectedSize}}</p>
+      <ion-list>
+        <ion-item
+          *ngFor="let size of sizes"
+          button
+          (click)="sizeClicked(size.name)"
+        >
+          <ion-label>{{size.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
   </div>
 </ion-content>
